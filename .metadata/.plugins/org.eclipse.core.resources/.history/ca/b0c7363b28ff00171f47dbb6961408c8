@@ -1,0 +1,14 @@
+package java8.base;
+
+public class FunctionalInterfaceClass {
+	
+	public int handle(HandleFunctionalInterface fi ,int a,int b){
+		return fi.handle(a, b);
+	};
+	
+	
+}
+@FunctionalInterface
+interface HandleFunctionalInterface{
+	public int handle(int a,int b);
+}

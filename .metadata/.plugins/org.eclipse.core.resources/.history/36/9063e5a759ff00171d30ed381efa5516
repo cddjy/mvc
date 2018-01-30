@@ -1,0 +1,63 @@
+package java8.base;
+
+import java.util.function.BiFunction;
+
+/**
+ * 方法引用
+ * 
+ * @author jianyi
+ *
+ */
+public class MethodReference {
+
+	MethodReference() {
+
+	}
+
+	public static void main(String[] args) {
+		MethodReference mr = new MethodReference();
+		mr.testMethodReference();
+	}
+
+	public void testMethodReference() {
+		int a = 1;
+		int b = 2;
+		MethodReference.handleStatic(a, b);
+
+		/**
+		 * 引用静态方法
+		 */
+		HandleFunctionalInterface f = MethodReference::handleStatic;
+		int r = f.handle(a, b);
+		System.out.println("handleStatic:" + r);
+
+		/**
+		 * 引用对象方法
+		 */
+		MethodReference m = new MethodReference();
+		HandleFunctionalInterface f2 = m::handleObject;
+		int r1 = f2.handle(a, b);
+		System.out.println("handleObject:" + r1);
+
+		BiFunction<Integer, Integer, Integer> biFunction = (arg1, arg2) -> arg1
+				* arg2;
+		Integer r2 = biFunction.apply(a, b);
+		System.out.println("biFunction:" + r2);
+
+		HandleFunctionalInterface f3 = RoleType::sub;
+
+		// MethodReference::new;
+
+		// BiFunction
+
+	}
+
+	public static int handleStatic(int a, int b) {
+		return a * b;
+	}
+
+	public int handleObject(int a, int b) {
+		return a * b;
+	}
+
+}

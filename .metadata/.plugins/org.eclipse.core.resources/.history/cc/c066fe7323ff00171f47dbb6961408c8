@@ -1,0 +1,10 @@
+package java8.base;
+
+public class Grammar {
+
+	public static void main(String[] args) {
+		HandleInterface interface = new  HandleInterface();
+
+	}
+
+}

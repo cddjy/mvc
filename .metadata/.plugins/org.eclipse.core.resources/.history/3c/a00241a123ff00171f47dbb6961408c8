@@ -1,0 +1,18 @@
+package java8.base;
+
+public class Grammar {
+
+	public static void main(String[] args) {
+//		HandleInterface handleInterface = new  HandleInterface((a,b)->a*b);
+		HandleInterface handleInterface = new  HandleInterface(){
+
+			@Override
+			public int handle(int a, int b) {
+				return a*b;
+			}
+			
+		};
+
+	}
+
+}

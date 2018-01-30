@@ -1,0 +1,14 @@
+package java8.base;
+
+/**
+ * 方法引用
+ * @author jianyi
+ *
+ */
+public class MethodReference {
+	
+	public void testMethodReference(){
+		
+	}
+
+}

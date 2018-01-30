@@ -1,0 +1,31 @@
+package java8.base;
+
+public class Grammar {
+
+	public static void main(String[] args) {
+
+	}
+
+	/**
+	 * 扩展方法 default method
+	 */
+	public int testDefaultMethod(int a, int b) {
+		HandleInterface handleInterface = new HandleInterface() {
+			@Override
+			public int handle(int a, int b) {
+				return a * b;
+			}
+
+		};
+		return handleInterface.handle(a, b);
+	}
+
+	/**
+	 * Lambda
+	 */
+	public int testLambda1(int a, int b) {
+		HandleInterface handleInterface = (a, b) -> a * b;
+
+	}
+
+}
